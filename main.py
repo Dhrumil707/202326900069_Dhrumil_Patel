@@ -14,6 +14,9 @@ class Student(BaseModel):
 
 students = []
 
+@app.get('/health')
+def health():
+    return {'status': 'ok'}
 
 @app.post('/students')
 def create_student(student: Student, response: Response):
